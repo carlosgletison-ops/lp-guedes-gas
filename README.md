@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Landing page — Guedes Gás | Ultragaz
 
-## Getting Started
+Landing page comercial com duas páginas:
+- `/`: página principal (institucional e comercial)
+- `/atendimento`: central com as cinco unidades (Icó, Iguatu, Crato, Jaguaribe e Várzea Alegre)
 
-First, run the development server:
+Objetivo: gerar pedidos pelo WhatsApp da unidade certa.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Rodar
+
+```
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # build de produção
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Stack
+Next.js 16 (App Router, Turbopack) · TypeScript · Tailwind CSS 4 · Lucide · next/font (Manrope + Inter). Sem banco de dados e sem dependências pesadas.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Estrutura
+```
+app/                  rotas, layout e tokens (globals.css)
+components/           header, barra mobile, link com mensuração
+components/home/      seções da página principal
+data/unidades.ts      FONTE ÚNICA: endereços, horários, WhatsApp, disponibilidade
+lib/                  site.ts (config), analytics.ts (eventos), utm.ts
+docs/                 análise, pendências, design system, estrutura, continuidade
+public/images/        fotografias
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Documentação
+1. `docs/01-ANALISE-E-DIRECAO.md`: referências, copy e direção criativa
+2. `docs/02-PENDENCIAS.md`: o que confirmar antes de publicar
+3. `docs/03-DESIGN-SYSTEM.md`: cores, tipografia, grid, componentes e movimento
+4. `docs/04-ESTRUTURA.md`: seções, fluxo, eventos e SEO
+5. `docs/05-CONTINUIDADE-ANTIGRAVITY.md`: como continuar e ajustar no Antigravity
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Status
+Proposta visual da hero implementada (header, hero, seletor de cidades e barra mobile). As demais seções e a central aguardam a aprovação da direção visual.
