@@ -16,6 +16,7 @@ Leia `docs/` antes de alterar qualquer coisa. Em especial: `03-DESIGN-SYSTEM.md`
 - Conteúdo: use somente a copy oficial. Não invente preços, horários, depoimentos, contadores, selos, CNPJ ou redes sociais.
 - Pendências abertas (Jaguaribe, disponibilidade P20/P45, Gás do Povo, logos, fotos): `docs/02-PENDENCIAS.md`.
 - Cores via tokens do Tailwind (`bg-azul`, `bg-verde`, `text-tinta`…). O verde é exclusivo de CTAs de conversão.
-- Proibido: pílulas/badges arredondados, navbar em cápsula, glassmorphism, gradientes decorativos, glow, blobs, cards dentro de cards, ícones em círculos coloridos.
+- Direção visual v2 "Noite azul" (ver docs/03): fundo `noite`, cards `superficie`; desfoque (`superficie-foto`) só sobre fotografia.
+- Proibido: pílulas/badges arredondados, navbar em cápsula, glow/neon, gradientes decorativos, blobs, cards dentro de cards, ícones em círculos coloridos.
 - Links de pedido e de cidade usam `<TrackedLink>` com o evento correspondente (`city_select`, `whatsapp_click`, `directions_click`).
 - Antes de concluir: `npx tsc --noEmit`, `npx eslint .` e `npm run build` sem erros.

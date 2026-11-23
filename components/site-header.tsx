@@ -35,22 +35,22 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`sticky top-0 z-50 border-b bg-white transition-[border-color,box-shadow] duration-300 ${
-        rolou || aberto ? "border-linha shadow-[0_1px_0_rgba(16,33,53,0.04)]" : "border-transparent"
+      className={`sticky top-0 z-50 border-b transition-[background-color,border-color] duration-300 ${
+        rolou || aberto ? "border-linha bg-noite/95" : "border-transparent bg-noite"
       }`}
     >
-      <div className="container-site flex h-16 items-center justify-between gap-6 lg:h-[72px]">
+      <div className="container-site flex h-16 items-center justify-between gap-6 lg:h-[76px]">
         <Link href="/" aria-label="Guedes Gás — página inicial" onClick={fechar} className="-my-2 py-2">
           <BrandMark />
         </Link>
 
         <nav aria-label="Principal" className="hidden lg:block">
-          <ul className="flex items-center gap-9">
+          <ul className="flex items-center gap-10">
             {navegacao.map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="relative py-2 text-[15px] font-medium text-tinta transition-colors after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:origin-left after:scale-x-0 after:bg-azul after:transition-transform after:duration-300 after:ease-[var(--ease-suave)] hover:text-azul hover:after:scale-x-100"
+                  className="relative py-2 text-[15px] font-medium text-texto-2 transition-colors after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-celeste after:transition-transform after:duration-300 after:ease-[var(--ease-suave)] hover:text-texto hover:after:scale-x-100"
                 >
                   {item.label}
                 </Link>
@@ -62,14 +62,10 @@ export function SiteHeader() {
         <div className="flex items-center gap-2">
           <TrackedLink
             href="/atendimento"
-            className="group hidden h-12 items-center gap-2 rounded-md bg-verde px-5 text-[15px] font-semibold text-white transition-colors duration-200 hover:bg-verde-escuro md:inline-flex"
+            className="group hidden h-11 items-center gap-2 rounded-md bg-verde px-5 text-[15px] font-semibold text-white transition-colors duration-200 hover:bg-verde-escuro md:inline-flex"
           >
+            <WhatsAppIcon className="size-[18px]" />
             Pedir pelo WhatsApp
-            <ArrowRight
-              aria-hidden
-              size={18}
-              className="transition-transform duration-300 ease-[var(--ease-suave)] group-hover:translate-x-0.5"
-            />
           </TrackedLink>
 
           <button
@@ -79,18 +75,14 @@ export function SiteHeader() {
             aria-expanded={aberto}
             aria-controls="menu-mobile"
             aria-label={aberto ? "Fechar menu" : "Abrir menu"}
-            className="-mr-3 inline-flex size-12 items-center justify-center rounded-md text-tinta transition-colors hover:bg-nevoa lg:hidden"
+            className="-mr-3 inline-flex size-12 items-center justify-center rounded-md text-texto transition-colors hover:bg-white/5 lg:hidden"
           >
             {aberto ? <X aria-hidden size={24} /> : <Menu aria-hidden size={24} />}
           </button>
         </div>
       </div>
 
-      <div
-        id="menu-mobile"
-        hidden={!aberto}
-        className="absolute inset-x-0 top-full border-b border-linha bg-white lg:hidden"
-      >
+      <div id="menu-mobile" hidden={!aberto} className="absolute inset-x-0 top-full border-b border-linha bg-noite lg:hidden">
         <nav aria-label="Menu" className="container-site pb-6">
           <ul>
             {navegacao.map((item) => (
@@ -98,10 +90,10 @@ export function SiteHeader() {
                 <Link
                   href={item.href}
                   onClick={fechar}
-                  className="flex h-14 items-center justify-between font-display text-lg font-semibold text-tinta"
+                  className="flex h-14 items-center justify-between font-display text-lg font-semibold text-texto"
                 >
                   {item.label}
-                  <ArrowRight aria-hidden size={18} className="text-tinta-2" />
+                  <ArrowRight aria-hidden size={18} className="text-texto-3" />
                 </Link>
               </li>
             ))}

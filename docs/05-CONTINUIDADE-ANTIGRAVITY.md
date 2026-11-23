@@ -26,7 +26,8 @@
 - Não editar o projeto no Antigravity e no Claude **ao mesmo tempo**. Faça um commit antes de trocar de ferramenta.
 - Dados de unidade ficam **só** em `data/unidades.ts`. Nunca escreva endereço ou telefone direto num componente.
 - O verde (`bg-verde`) é exclusivo de botões de conversão.
-- Nada de pílulas, glassmorphism, gradientes decorativos, cards dentro de cards ou ícones em círculos coloridos.
+- Siga a direção "Noite azul" (docs/03-DESIGN-SYSTEM.md): fundo `noite`, cards `superficie`, títulos com `<SectionTitle>`. Desfoque só em cards sobre foto.
+- Nada de pílulas, glow, gradientes decorativos, cards dentro de cards ou ícones em círculos coloridos.
 - Não inventar preços, depoimentos, contadores, selos ou horários.
 - Novos links de pedido devem usar `<TrackedLink>` com o `evento` correspondente.
 - Antes de publicar: `npm run build` sem erros e a lista de `02-PENDENCIAS.md` resolvida.

@@ -19,7 +19,18 @@
 - Fluxo definido pela copy: o CTA principal leva à **Página 02 (central)**, não direto ao WhatsApp. O visitante escolhe a unidade e só então abre a conversa.
 - Os itens que precisam de validação estão em `02-PENDENCIAS.md`.
 
-## 3. Direção criativa: "Sempre perto de você"
+## 3. Direção atual (v2): "Noite azul"
+
+Depois de revisar a v1, o cliente pediu uma página **mais harmônica visualmente** e indicou como referência um arquivo do Figma (site de plantas em ambiente verde-escuro, cards translúcidos e fotos protagonistas). Na v2:
+- Um único ambiente azul profundo em toda a página. A harmonia vem da continuidade, sem a alternância de fundos claros e escuros.
+- A foto do entregador fica num quadro arredondado, com cards flutuantes ("Cinco unidades no Ceará" e "Programa Gás do Povo").
+- Os títulos de seção são centralizados, com colchetes nos cantos.
+- O seletor de cidades virou cards numerados translúcidos.
+- O verde continua exclusivo dos CTAs.
+
+Os detalhes estão em `03-DESIGN-SYSTEM.md`. A seção abaixo descreve a v1 e fica como histórico. O conceito "Sempre perto de você" e a lista numerada de cidades continuam valendo.
+
+## 3a. Direção v1 (histórico): "Sempre perto de você"
 
 A ideia central é **proximidade concreta**. A Guedes Gás não é "uma distribuidora": são cinco endereços reais, com nomes de bairros e horários. A interface trata as cidades como protagonistas.
 

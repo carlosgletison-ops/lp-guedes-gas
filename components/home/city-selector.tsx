@@ -1,47 +1,42 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import { SectionTitle } from "@/components/section-title";
 import { TrackedLink } from "@/components/tracked-link";
 import { linkCentral, unidades } from "@/data/unidades";
 
 /**
  * Seletor rápido de cidade — leva à central com a unidade já destacada
- * (/atendimento?cidade=slug). Lista numerada, sem chips/pílulas.
+ * (/atendimento?cidade=slug). Cards numerados 01–05, sem chips/pílulas.
  */
 export function CitySelector() {
   return (
-    <section id="cidades" aria-labelledby="cidades-titulo" className="sobre-escuro bg-azul-profundo text-white">
-      <div className="container-site grid gap-6 py-12 md:gap-8 md:py-14 lg:grid-cols-12 lg:gap-10 lg:py-16">
-        <div className="lg:col-span-3 lg:pt-1">
-          <h2 id="cidades-titulo" className="font-display text-[26px] font-extrabold leading-[1.1] tracking-[-0.025em] md:text-[30px]">
-            Onde você precisa de gás?
-          </h2>
-          <p className="mt-3 max-w-[38ch] text-[15px] leading-relaxed text-white/75">
-            Escolha sua cidade e encontre a unidade mais próxima para fazer seu pedido.
-          </p>
-        </div>
+    <section id="cidades" aria-labelledby="cidades-titulo" className="py-20 md:py-24 lg:py-28">
+      <div className="container-site">
+        <SectionTitle id="cidades-titulo">Onde você precisa de gás?</SectionTitle>
+        <p className="mx-auto mt-5 max-w-[46ch] text-center text-texto-2">
+          Escolha sua cidade e encontre a unidade mais próxima para fazer seu pedido.
+        </p>
 
-        <ul className="border-t border-white/15 md:grid md:grid-cols-5 md:border-t-0 lg:col-span-9">
+        <ul className="mt-12 grid gap-3 sm:grid-cols-2 md:mt-14 md:gap-4 lg:grid-cols-5">
           {unidades.map((u) => (
-            <li key={u.slug} className="border-b border-white/15 md:border-b-0 md:border-l md:last:border-r">
+            <li key={u.slug} className="sm:last:col-span-2 lg:last:col-span-1">
               <TrackedLink
                 href={linkCentral(u.slug)}
                 evento="city_select"
                 params={{ cidade: u.cidade, unidade: u.nome, secao_origem: "seletor_cidades" }}
-                className="group flex min-h-16 items-center justify-between gap-4 py-4 transition-colors duration-200 md:h-full md:min-h-[148px] md:flex-col md:items-start md:px-5 md:py-5 md:hover:bg-azul-noite"
+                className="superficie group relative flex h-full items-center justify-between gap-4 p-5 transition-[transform,border-color,background-color] duration-300 ease-[var(--ease-suave)] hover:-translate-y-1 hover:border-linha-forte hover:bg-white/[0.06] lg:min-h-[200px] lg:flex-col lg:items-stretch lg:p-6"
               >
-                <span className="flex items-baseline gap-4 md:flex-col md:gap-2">
-                  <span className="font-display text-sm font-semibold tabular-nums text-white/50">{u.ordem}</span>
-                  <span className="font-display text-xl font-bold leading-tight tracking-[-0.015em] lg:text-[22px]">
-                    {u.cidade}
+                <span className="flex items-center gap-4 lg:flex-col lg:items-start lg:gap-0">
+                  <span className="font-display text-sm font-medium tabular-nums text-texto-3">{u.ordem}</span>
+                  <span className="lg:mt-10">
+                    <span className="block font-display text-xl font-semibold leading-tight tracking-[-0.015em] lg:text-[22px]">
+                      {u.cidade}
+                    </span>
+                    <span className="mt-1 block text-sm text-texto-3">{u.endereco.bairro}</span>
                   </span>
                 </span>
-                <span className="flex items-center gap-2 text-sm font-medium text-white/70 transition-colors group-hover:text-white">
-                  <span className="hidden lg:inline">Ver unidade</span>
-                  <span className="sr-only lg:hidden">Ver unidade de {u.cidade}</span>
-                  <ArrowRight
-                    aria-hidden
-                    size={18}
-                    className="transition-transform duration-300 ease-[var(--ease-suave)] group-hover:translate-x-1"
-                  />
+                <span className="grid size-10 shrink-0 place-items-center self-center rounded-lg border border-linha-forte text-texto-2 transition-colors duration-300 group-hover:border-verde group-hover:bg-verde group-hover:text-white lg:absolute lg:right-6 lg:top-6 lg:self-auto">
+                  <ArrowUpRight aria-hidden size={18} />
+                  <span className="sr-only">Ver unidade de {u.cidade}</span>
                 </span>
               </TrackedLink>
             </li>
