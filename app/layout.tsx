@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Manrope } from "next/font/google";
 import { AnalyticsListener } from "@/components/analytics-listener";
 import { MobileOrderBar } from "@/components/mobile-order-bar";
+import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { TopBar } from "@/components/top-bar";
 import { site } from "@/lib/site";
@@ -26,12 +27,15 @@ export const metadata: Metadata = {
     template: "%s | Guedes Gás",
   },
   description: site.descricao,
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "pt_BR",
     siteName: site.nome,
     title: "Guedes Gás — Precisou de gás? A Guedes Gás leva até você!",
     description: site.descricao,
+    // PROVISÓRIA: trocar por imagem 1200×630 com foto real da Guedes Gás.
+    images: [{ url: "/images/hero-entregador-ultragaz.jpg", width: 1080, height: 1080, alt: "Entregador Ultragaz" }],
   },
 };
 
@@ -53,6 +57,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <TopBar />
         <SiteHeader />
         <main id="conteudo">{children}</main>
+        <SiteFooter />
         {/* Espaço reservado para a barra fixa do mobile não cobrir conteúdo */}
         <div aria-hidden className="h-[76px] md:hidden" />
         <MobileOrderBar />

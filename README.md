@@ -36,4 +36,4 @@ public/images/        fotografias
 5. `docs/05-CONTINUIDADE-ANTIGRAVITY.md`: como continuar e ajustar no Antigravity
 
 ## Status
-Proposta visual da hero implementada (header, hero, seletor de cidades e barra mobile). As demais seções e a central aguardam a aprovação da direção visual.
+As duas páginas estão implementadas (principal e central de atendimento), além da política de privacidade em rascunho. Antes de publicar, resolva os itens de `docs/02-PENDENCIAS.md`: fotos oficiais, logotipo, Jaguaribe, Gás do Povo, dados legais e IDs de mensuração.

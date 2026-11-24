@@ -13,13 +13,15 @@ Marque cada item quando estiver resolvido. Nada aqui foi inventado no site. Onde
 - [ ] **Logotipo da Guedes Gás** (SVG ou PNG em alta). Hoje há uma marca tipográfica provisória em `components/brand.tsx`.
 - [ ] **Uso da marca Ultragaz.** Selo ou logotipo autorizado e manual de identidade, se houver. Se o manual trouxer outras cores, ajustar os tokens em `app/globals.css`.
 - [ ] **Foto da hero.** A atual é de campanha da Ultragaz (`public/images/hero-entregador-ultragaz.jpg`). Confirmar a autorização ou substituir por uma foto real da equipe ou de uma unidade da Guedes Gás.
-- [ ] **Fotos dos botijões P13, P20 e P45** recortadas (PNG/WebP com transparência), oficiais ou fotografadas.
-- [ ] **Foto humanizada para a seção Gás do Povo** (atendimento real em unidade, de preferência).
+- [ ] **Fotos dos botijões P13, P20 e P45** recortadas (PNG/WebP com transparência), oficiais ou fotografadas. Hoje há **ilustrações vetoriais provisórias** (`components/botijao.tsx`), sinalizadas como "Imagens ilustrativas". Para trocar: salvar em `public/images/produtos/` e preencher `foto` em `data/produtos.ts`. A legenda some sozinha.
+- [ ] **Foto humanizada para a seção Gás do Povo** (atendimento real em unidade, de preferência). Hoje é um recorte da foto da hero (luva e botijão).
+- [ ] **Imagem de compartilhamento (Open Graph)** em 1200×630. Hoje usa a foto da hero.
 
 ## Jurídico e técnico
 - [ ] Razão social, CNPJ e endereço legal para o rodapé (não serão inventados).
-- [ ] Texto da Política de Privacidade (e da política de cookies, se houver pixel ou GA).
+- [ ] Texto da Política de Privacidade (e da política de cookies, se houver pixel ou GA). Hoje `/politica-de-privacidade` é um **rascunho** com `noindex`.
+- [ ] Banner de consentimento de cookies, se forem ativados GA4 ou Meta Pixel.
 - [ ] Domínio oficial: definir `NEXT_PUBLIC_SITE_URL`.
 - [ ] IDs de mensuração (GTM, GA4, Meta Pixel), configurados via `.env.local`.
 - [ ] Redes sociais oficiais (só entram se forem fornecidas).
-- [ ] Coordenadas do mapa: hoje são o centro aproximado de cada município (`geo` em `data/unidades.ts`). Para pinos nos endereços exatos, validar no Google Maps.
+- [x] Coordenadas do mapa: centróides oficiais dos municípios (IBGE). Se quiser pinos nos endereços exatos, informe as coordenadas de cada loja.

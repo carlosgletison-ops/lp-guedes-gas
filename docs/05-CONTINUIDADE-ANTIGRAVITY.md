@@ -19,6 +19,13 @@
 | Header / barra superior | `components/site-header.tsx`, `components/top-bar.tsx` |
 | Hero | `components/home/hero.tsx` |
 | Seletor de cidades | `components/home/city-selector.tsx` |
+| Seções da home | `components/home/*.tsx` (produtos, gas-do-povo, diferenciais, presenca, como-funciona, faq, cta-final) |
+| Perguntas frequentes | `data/faq.ts` |
+| Fotos dos botijões | `data/produtos.ts` (campo `foto`) + `public/images/produtos/` |
+| Central de atendimento | `app/atendimento/page.tsx` + `components/atendimento/` |
+| Rodapé | `components/site-footer.tsx` |
+| Política de privacidade | `app/politica-de-privacidade/page.tsx` |
+| Mapa do Ceará | `data/mapa-ceara.ts` (gerado por `scripts/gerar-mapa.cjs`) |
 | Logotipo | `components/brand.tsx` (trocar a marca tipográfica pelo arquivo oficial) |
 | Foto da hero | Substituir `public/images/hero-entregador-ultragaz.jpg` (mesmo nome, ou ajustar o `src` em `hero.tsx`) |
 

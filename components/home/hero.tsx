@@ -92,7 +92,7 @@ export function Hero() {
               fill
               loading="eager"
               fetchPriority="high"
-              sizes="(min-width: 1024px) 55vw, 100vw"
+              sizes="(min-width: 1280px) 720px, (min-width: 1024px) 50vw, calc(100vw - 32px)"
               className="anim-foto object-cover object-[45%_22%]"
             />
             {/* Assentamento da foto no ambiente azul: suaviza a onda gráfica à esquerda
