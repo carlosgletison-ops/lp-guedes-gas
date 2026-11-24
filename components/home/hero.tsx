@@ -18,15 +18,28 @@ const destaques = [
 
 export function Hero() {
   return (
-    <section id="inicio" aria-labelledby="hero-titulo" className="relative overflow-hidden">
-      {/* Luz ambiente da marca atrás da fotografia (estática, sutil) */}
+    <section id="inicio" aria-labelledby="hero-titulo" className="relative overflow-hidden bg-noite">
+      {/* Fundo oficial da Hero Desktop (horizontal 4K) */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(55%_60%_at_72%_42%,rgb(0_84_217/0.22),transparent_70%)]"
-      />
+        className="pointer-events-none absolute inset-0 select-none overflow-hidden"
+      >
+        <Image
+          src="/images/banner-hero-4k.png"
+          alt=""
+          fill
+          priority
+          unoptimized
+          className="hidden object-cover lg:block lg:object-right xl:object-center"
+        />
+
+        {/* Gradiente para leitura impecável no Desktop */}
+        <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-noite via-noite/85 to-transparent lg:w-3/5 lg:via-noite/75" />
+        <div className="hidden lg:block absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-noite to-transparent" />
+      </div>
 
       <div className="container-site relative grid items-center gap-10 pb-14 pt-8 md:pb-20 md:pt-12 lg:grid-cols-12 lg:gap-8 lg:pb-24 lg:pt-14">
-        {/* Conteúdo */}
+        {/* Conteúdo: Título, Descrição e CTAs */}
         <div className="relative z-10 lg:col-span-6 xl:col-span-5">
           <p className="anim-surgir flex items-center gap-2 text-[15px] font-medium text-celeste">
             <MapPin aria-hidden size={17} strokeWidth={2} />
@@ -82,34 +95,24 @@ export function Hero() {
           </p>
         </div>
 
-        {/* Fotografia com cards flutuantes */}
-        <div className="relative lg:col-span-6 xl:col-span-7 xl:pl-6">
-          <div className="relative aspect-[4/3.6] overflow-hidden rounded-[var(--radius-foto)] border border-linha sm:aspect-[16/11] lg:aspect-auto lg:h-[clamp(520px,calc(100svh-220px),640px)]">
-            {/* PROVISÓRIA: foto de campanha Ultragaz. Substituir por foto real da Guedes Gás. */}
+        {/* Lado visual: No mobile fica abaixo do texto com o entregador menorzinho */}
+        <div className="relative flex justify-center lg:col-span-6 lg:min-h-[540px] xl:col-span-7 xl:min-h-[620px] xl:pl-6">
+          {/* No Mobile / Tablet (< lg): Apenas a imagem do entregador direta, sem card nem borda */}
+          <div className="relative mx-auto mt-2 w-full max-w-[360px] sm:max-w-[420px] aspect-[4/4.8] lg:hidden">
             <Image
-              src="/images/hero-entregador-ultragaz.jpg"
-              alt="Entregador com uniforme Ultragaz sorrindo ao lado de um botijão de gás azul"
+              src="/images/hero-mobile.jpg"
+              alt="Entregador Ultragaz da Guedes Gás com botijão"
               fill
-              loading="eager"
-              fetchPriority="high"
-              sizes="(min-width: 1280px) 720px, (min-width: 1024px) 50vw, calc(100vw - 32px)"
-              className="anim-foto object-cover object-[45%_22%]"
-            />
-            {/* Assentamento da foto no ambiente azul: suaviza a onda gráfica à esquerda
-                e a base, para leitura dos cards. Tom da marca, nunca preto. */}
-            <div
-              aria-hidden
-              className="absolute inset-0 bg-gradient-to-r from-noite/45 via-noite/5 to-transparent"
-            />
-            <div
-              aria-hidden
-              className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-noite/70 to-transparent"
+              priority
+              unoptimized
+              className="object-cover object-bottom pointer-events-none select-none"
             />
           </div>
 
-          {/* Card flutuante — unidades (desktop/tablet) */}
+          {/* No Desktop (lg+): Cards flutuantes sobre o banner lateral */}
+          {/* Card flutuante — unidades */}
           <div
-            className="anim-card superficie-foto absolute right-4 top-4 hidden w-[248px] p-5 md:block lg:hidden xl:-right-4 xl:block xl:top-10"
+            className="anim-card superficie-foto hidden lg:block absolute right-4 top-4 xl:right-0 xl:top-8 z-20 w-[240px] sm:w-[260px] p-5"
             style={atraso(760)}
           >
             <p className="font-display text-[15px] font-semibold">Cinco unidades no Ceará</p>
@@ -125,7 +128,7 @@ export function Hero() {
 
           {/* Card flutuante — Gás do Povo */}
           <div
-            className="anim-card superficie-foto relative -mt-14 ml-4 mr-10 flex items-start gap-3.5 p-4 sm:absolute sm:bottom-5 sm:left-5 sm:m-0 sm:w-[300px] xl:-left-10 xl:bottom-10"
+            className="anim-card superficie-foto hidden lg:flex absolute bottom-4 left-4 xl:-left-6 xl:bottom-10 z-20 items-start gap-3.5 p-4 sm:w-[300px]"
             style={atraso(880)}
           >
             <span className="grid size-10 shrink-0 place-items-center rounded-lg border border-linha-forte text-celeste">

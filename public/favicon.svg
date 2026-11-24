@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a1e44"/>
+      <stop offset="100%" stop-color="#061430"/>
+    </linearGradient>
+    <linearGradient id="gas" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00a8ff"/>
+      <stop offset="50%" stop-color="#0054d9"/>
+      <stop offset="100%" stop-color="#003579"/>
+    </linearGradient>
+    <linearGradient id="flame" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#00843a"/>
+      <stop offset="100%" stop-color="#00e84b"/>
+    </linearGradient>
+  </defs>
+  <!-- Fundo escuro com cantos arredondados -->
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  
+  <!-- Alça superior do botijão -->
+  <path d="M22 17 C22 15 24 13.5 26 13.5 L38 13.5 C40 13.5 42 15 42 17 L42 20 C42 20.5 41.5 21 41 21 L23 21 C22.5 21 22 20.5 22 20 Z" fill="url(#gas)"/>
+  <rect x="27" y="15.8" width="10" height="2.5" rx="1" fill="#061430"/>
+
+  <!-- Válvula central -->
+  <rect x="29.5" y="19" width="5" height="3" rx="0.5" fill="#e0e8ff"/>
+
+  <!-- Corpo do botijão P13 -->
+  <path d="M16 31 C16 23.5 22 22 32 22 C42 22 48 23.5 48 31 L48 45 C48 49 44 51 32 51 C20 51 16 49 16 45 Z" fill="url(#gas)"/>
+  
+  <!-- Vinco central característico -->
+  <line x1="16" y1="36" x2="48" y2="36" stroke="rgb(255 255 255 / 0.22)" stroke-width="1"/>
+  
+  <!-- Base de sustentação -->
+  <path d="M20 51 L44 51 L43 55 C43 56 42 56.5 41 56.5 L23 56.5 C22 56.5 21 56 21 55 Z" fill="#002b66"/>
+
+  <!-- Chama Ultragaz centralizada -->
+  <path d="M32 28 C34.5 30.5 36 32.5 36 34.5 C36 37 34.2 39 32 39 C29.8 39 28 37 28 34.5 C28 32.5 29.5 30.5 32 28 Z" fill="url(#flame)"/>
+</svg>

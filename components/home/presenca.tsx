@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { SectionTitle } from "@/components/section-title";
 import { TrackedLink } from "@/components/tracked-link";
@@ -62,54 +63,75 @@ export function Presenca() {
           </div>
 
           {/* Mapa */}
-          <figure className="revelar superficie relative flex flex-col items-center justify-center px-6 py-8 lg:order-1 lg:col-span-6 lg:py-10">
-            <svg
-              viewBox={mapaCeara.viewBox}
-              role="img"
-              aria-labelledby="mapa-titulo"
-              className="h-auto w-full max-w-[400px] overflow-visible"
-            >
-              <title id="mapa-titulo">
-                Mapa do Ceará com as cinco unidades da Guedes Gás: Icó, Iguatu, Crato, Jaguaribe e Várzea Alegre
-              </title>
-              <path d={mapaCeara.contorno} fill="rgb(255 255 255 / 0.04)" stroke="rgb(110 162 255 / 0.55)" strokeWidth="1.25" strokeLinejoin="round" />
+          <figure className="revelar superficie relative flex flex-col items-center justify-center overflow-hidden px-6 py-8 lg:order-1 lg:col-span-6 lg:py-10">
+            <div className="relative mt-2 flex w-full max-w-[320px] sm:max-w-[420px] items-center justify-center">
+              {/* Modelo 3D PNG abaixo como mapa base */}
+              <div className="pointer-events-none absolute inset-0 flex items-center justify-center select-none">
+                <Image
+                  src="/images/mapa-ceara-3d.png"
+                  alt="Mapa 3D do Ceará estilizado"
+                  width={1283}
+                  height={1226}
+                  unoptimized
+                  priority
+                  className="h-full w-full object-contain scale-[1.42] translate-y-3 drop-shadow-[0_20px_40px_rgba(0,100,255,0.3)]"
+                />
+              </div>
 
-              {/* Referência: capital */}
-              <circle cx={fortaleza.x} cy={fortaleza.y} r="3" fill="#8392ad" />
-              <text x={fortaleza.x + 8} y={fortaleza.y + 4} fontSize="12" fill="#8392ad" className="font-sans">
-                Fortaleza
-              </text>
+              {/* Camada SVG com os pontos e nomes das cidades por cima */}
+              <svg
+                viewBox={mapaCeara.viewBox}
+                role="img"
+                aria-labelledby="mapa-titulo"
+                className="relative z-10 h-auto w-full overflow-visible"
+              >
+                <title id="mapa-titulo">
+                  Mapa do Ceará com as cinco unidades da Guedes Gás: Icó, Iguatu, Crato, Jaguaribe e Várzea Alegre
+                </title>
 
-              {unidades.map((u) => {
-                const p = mapaCeara.pontos[u.slug];
-                const r = rotulo[u.slug];
-                const on = ativo === u.slug;
-                return (
-                  <g key={u.slug} className="transition-opacity duration-300" opacity={ativo && !on ? 0.45 : 1}>
-                    <circle
-                      cx={p.x}
-                      cy={p.y}
-                      r={on ? 13 : 9}
-                      fill="rgb(110 162 255 / 0.18)"
-                      className="transition-all duration-300"
-                    />
-                    <circle cx={p.x} cy={p.y} r={on ? 5.5 : 4.5} fill={on ? "#00843a" : "#6ea2ff"} className="transition-all duration-300" />
-                    <text
-                      x={p.x + r.dx}
-                      y={p.y + r.dy}
-                      textAnchor={r.anchor}
-                      fontSize="13"
-                      fontWeight={600}
-                      fill="#ffffff"
-                      className="font-sans"
-                    >
-                      {u.cidade}
-                    </text>
-                  </g>
-                );
-              })}
-            </svg>
-            <figcaption className="mt-4 text-center text-xs text-texto-3">
+                {/* Referência: capital */}
+                <circle cx={fortaleza.x} cy={fortaleza.y} r="3" fill="#8392ad" />
+                <text x={fortaleza.x + 8} y={fortaleza.y + 4} fontSize="12" fill="#8392ad" className="font-sans font-medium">
+                  Fortaleza
+                </text>
+
+                {unidades.map((u) => {
+                  const p = mapaCeara.pontos[u.slug];
+                  const r = rotulo[u.slug];
+                  const on = ativo === u.slug;
+                  return (
+                    <g key={u.slug} className="transition-opacity duration-300" opacity={ativo && !on ? 0.45 : 1}>
+                      <circle
+                        cx={p.x}
+                        cy={p.y}
+                        r={on ? 14 : 10}
+                        fill="rgb(110 162 255 / 0.25)"
+                        className="transition-all duration-300"
+                      />
+                      <circle
+                        cx={p.x}
+                        cy={p.y}
+                        r={on ? 6 : 5}
+                        fill={on ? "#00843a" : "#6ea2ff"}
+                        className="transition-all duration-300"
+                      />
+                      <text
+                        x={p.x + r.dx}
+                        y={p.y + r.dy}
+                        textAnchor={r.anchor}
+                        fontSize="13"
+                        fontWeight={700}
+                        fill="#ffffff"
+                        className="font-sans drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)]"
+                      >
+                        {u.cidade}
+                      </text>
+                    </g>
+                  );
+                })}
+              </svg>
+            </div>
+            <figcaption className="relative z-10 mt-4 text-center text-xs text-texto-3">
               Posições pelo centro de cada município · Fonte: IBGE
             </figcaption>
           </figure>

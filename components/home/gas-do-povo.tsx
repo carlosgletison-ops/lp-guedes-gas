@@ -21,13 +21,13 @@ export function GasDoPovo() {
         {/* Fotografia */}
         <div className="revelar relative lg:col-span-6">
           <div className="relative aspect-[5/4] overflow-hidden rounded-[var(--radius-foto)] border border-linha lg:aspect-[4/4.4]">
-            {/* PROVISÓRIA: recorte da foto de campanha. Ideal: atendimento real em uma unidade. */}
             <Image
-              src="/images/hero-entregador-ultragaz.jpg"
-              alt="Mão com luva de proteção conduzindo o carrinho com botijão de gás"
+              src="/images/entregador-ultragaz-botijoes.png"
+              alt="Entregador Ultragaz com botijões azuis e uniforme oficial"
               fill
+              unoptimized
               sizes="(min-width: 1024px) 45vw, 100vw"
-              className="origin-[52%_92%] scale-[1.7] object-cover"
+              className="object-cover object-center transition-transform duration-500 ease-[var(--ease-suave)] hover:scale-105"
             />
             <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-noite/55 via-transparent to-transparent" />
           </div>
