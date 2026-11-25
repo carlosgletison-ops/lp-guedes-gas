@@ -1,4 +1,5 @@
 import { BadgeCheck, Headset, MapPinned, Truck } from "lucide-react";
+import { UltragazAmbientGlow, UltragazUShape, UltragazWave } from "@/components/brand-shapes";
 import { SectionTitle } from "@/components/section-title";
 
 const itens = [
@@ -24,11 +25,16 @@ const itens = [
   },
 ];
 
-/** Composição aberta em duas colunas — sem cards. */
+/** Composição aberta com elementos gráficos proprietários da Ultragaz */
 export function Diferenciais() {
   return (
-    <section aria-labelledby="dif-titulo" className="border-y border-linha py-20 md:py-24 lg:py-28">
-      <div className="container-site grid gap-12 lg:grid-cols-12 lg:gap-16">
+    <section aria-labelledby="dif-titulo" className="relative overflow-hidden border-y border-linha bg-noite py-20 md:py-24 lg:py-28">
+      {/* Elemento Forma U e Ondas da Marca em background */}
+      <UltragazUShape className="absolute -right-20 -top-16 h-[560px] w-[460px] opacity-[0.14] rotate-6" />
+      <UltragazWave variant="azul-ciano" opacity={0.12} className="absolute -bottom-16 left-0 right-0 h-40 w-full" />
+      <UltragazAmbientGlow color="cyan" className="top-1/4 -left-20 h-96 w-96 opacity-15" />
+
+      <div className="container-site relative z-10 grid gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-5">
           <div className="lg:sticky lg:top-32">
             <SectionTitle id="dif-titulo" align="left">
@@ -45,12 +51,18 @@ export function Diferenciais() {
           {itens.map(({ icone: Icone, titulo, texto }, i) => (
             <li
               key={titulo}
-              className={`revelar border-t border-linha py-8 sm:px-8 ${i % 2 === 0 ? "sm:pl-0" : "sm:border-l"} ${
-                i > 1 ? "" : "sm:border-t-0 sm:pt-0"
-              } ${i === 1 ? "border-t sm:border-t-0" : ""}`}
+              className={`revelar group border-t border-linha py-8 transition-colors duration-300 hover:bg-white/[0.02] sm:px-8 ${
+                i % 2 === 0 ? "sm:pl-0" : "sm:border-l"
+              } ${i > 1 ? "" : "sm:border-t-0 sm:pt-0"} ${i === 1 ? "border-t sm:border-t-0" : ""}`}
             >
-              <Icone aria-hidden size={28} strokeWidth={1.5} className="text-celeste" />
-              <h3 className="mt-5 font-display text-xl font-semibold tracking-[-0.015em]">{titulo}</h3>
+              <div className="relative inline-flex">
+                <span
+                  aria-hidden="true"
+                  className="absolute -inset-2 rounded-full bg-celeste/15 blur-md opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                />
+                <Icone aria-hidden size={30} strokeWidth={1.5} className="relative text-celeste transition-transform duration-300 group-hover:scale-110" />
+              </div>
+              <h3 className="mt-5 font-display text-xl font-semibold tracking-[-0.015em] text-texto">{titulo}</h3>
               <p className="mt-2 text-texto-2">{texto}</p>
             </li>
           ))}

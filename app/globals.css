@@ -1,38 +1,43 @@
 @import "tailwindcss";
 
 /* =========================================================
-   DESIGN TOKENS — Guedes Gás · direção "Noite azul"
-   Ambiente monocromático em azul profundo (inspirado na referência
-   do Figma enviada pelo cliente). Documentação: docs/03-DESIGN-SYSTEM.md
+   DESIGN TOKENS — Guedes Gás & Ultragaz
+   Identidade visual alinhada estritamente ao Manual Oficial Ultragaz
+   - Azul Ultragaz: Pantone 2728 C (#0015FF)
+   - Ciano Ultragaz: Pantone 3533 C (#00E5FF)
+   - Verde Ultragaz: Pantone 3561 C (#00E84B)
+   - Cinza: Pantone Cool Gray 4 C (#BBBCBC)
    ========================================================= */
 @theme {
-  /* Ambiente */
-  --color-noite: #061430; /* fundo da página */
-  --color-noite-2: #0a1e44; /* superfícies elevadas sólidas */
-  --color-noite-3: #10295a; /* hover de superfícies */
+  /* Ambiente — base azul profundo nobre */
+  --color-noite: #050d24; /* fundo da página */
+  --color-noite-2: #09173e; /* superfícies elevadas sólidas */
+  --color-noite-3: #0e2259; /* hover de superfícies */
 
-  /* Marca */
-  --color-azul: #0054d9; /* azul Ultragaz — áreas sólidas */
-  --color-azul-profundo: #003579;
-  --color-celeste: #6ea2ff; /* azul de destaque legível sobre o escuro (6,6:1) */
+  /* Cores Oficiais da Marca Ultragaz */
+  --color-azul: #0015ff; /* Azul Ultragaz Oficial — Pantone 2728 C */
+  --color-azul-profundo: #000cb8;
+  --color-celeste: #00e5ff; /* Ciano Ultragaz Oficial — Pantone 3533 C */
+  --color-ciano: #00e5ff;
 
-  /* Conversão */
-  --color-verde: #00843a; /* botões com texto branco (4,8:1) */
-  --color-verde-escuro: #006f31;
-  --color-verde-marca: #009b40;
+  /* Conversão & Acentos */
+  --color-verde: #008f3e; /* Botões de conversão com contraste perfeito (WCAG AA) */
+  --color-verde-escuro: #007332;
+  --color-verde-marca: #00e84b; /* Verde Ultragaz Oficial — Pantone 3561 C */
+  --color-cinza-marca: #bbbcbc; /* Pantone Cool Gray 4 C */
 
   /* Texto sobre o escuro */
   --color-texto: #ffffff;
-  --color-texto-2: #b4c0d6; /* secundário (9,6:1) */
-  --color-texto-3: #8392ad; /* terciário/legendas (5,6:1) */
+  --color-texto-2: #b4c4e0; /* secundário com tonalidade azulada refinada */
+  --color-texto-3: #7589ad; /* terciário/legendas */
 
   /* Linhas */
-  --color-linha: rgb(255 255 255 / 0.12);
-  --color-linha-forte: rgb(255 255 255 / 0.24);
+  --color-linha: rgb(255 255 255 / 0.1);
+  --color-linha-forte: rgb(255 255 255 / 0.2);
 
-  /* Tipografia */
-  --font-display: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  /* Tipografia — Mangueira (display/geométrica) & Roboto (sistema) */
+  --font-display: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
 
   /* Raios */
   --radius-sm: 6px;

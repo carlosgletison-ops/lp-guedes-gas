@@ -15,7 +15,7 @@ export function BrandMark() {
             height={724}
             priority
             unoptimized
-            className="h-[26px] w-auto object-contain brightness-105 sm:h-[34px] lg:h-[36px]"
+            className="h-[28px] w-auto object-contain brightness-105 sm:h-[36px] lg:h-[40px]"
           />
         </span>
       </span>

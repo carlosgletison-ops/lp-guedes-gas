@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Manrope } from "next/font/google";
+import { Outfit, Roboto } from "next/font/google";
 import { AnalyticsListener } from "@/components/analytics-listener";
 import { MobileOrderBar } from "@/components/mobile-order-bar";
 import { SiteFooter } from "@/components/site-footer";
@@ -8,16 +8,18 @@ import { TopBar } from "@/components/top-bar";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const manrope = Manrope({
+const outfit = Outfit({
   subsets: ["latin"],
-  variable: "--font-manrope",
+  variable: "--font-display",
   display: "swap",
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
-const inter = Inter({
+const roboto = Roboto({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-sans",
   display: "swap",
+  weight: ["300", "400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -34,19 +36,18 @@ export const metadata: Metadata = {
     siteName: site.nome,
     title: "Guedes Gás — Precisou de gás? A Guedes Gás leva até você!",
     description: site.descricao,
-    // PROVISÓRIA: trocar por imagem 1200×630 com foto real da Guedes Gás.
     images: [{ url: "/images/hero-entregador-ultragaz.jpg", width: 1080, height: 1080, alt: "Entregador Ultragaz" }],
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#061430",
+  themeColor: "#050e26",
   viewportFit: "cover",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="pt-BR" className={`${manrope.variable} ${inter.variable} antialiased`}>
+    <html lang="pt-BR" className={`${outfit.variable} ${roboto.variable} antialiased`}>
       <body className="min-h-svh">
         <a
           href="#conteudo"
