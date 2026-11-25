@@ -18,18 +18,25 @@ export function GasDoPovo() {
   return (
     <section id="gas-do-povo" aria-labelledby="gdp-titulo" className="py-20 md:py-24 lg:py-28">
       <div className="container-site grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-        {/* Fotografia */}
+        {/* Card com a Tag 3D oficial do Programa Gás do Povo */}
         <div className="revelar relative lg:col-span-6">
-          <div className="relative aspect-[5/4] overflow-hidden rounded-[var(--radius-foto)] border border-linha lg:aspect-[4/4.4]">
-            <Image
-              src="/images/entregador-ultragaz-botijoes.png"
-              alt="Entregador Ultragaz com botijões azuis e uniforme oficial"
-              fill
-              unoptimized
-              sizes="(min-width: 1024px) 45vw, 100vw"
-              className="object-cover object-center transition-transform duration-500 ease-[var(--ease-suave)] hover:scale-105"
+          <div className="superficie relative flex aspect-[5/4] items-center justify-center overflow-hidden rounded-[var(--radius-foto)] border border-linha p-6 sm:p-10 lg:aspect-[4/4.4]">
+            {/* Brilho radial suave de fundo no card */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgb(110_162_255/0.12),transparent_70%)]"
             />
-            <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-noite/55 via-transparent to-transparent" />
+            <div className="relative h-full w-full max-w-[340px] sm:max-w-[400px]">
+              <Image
+                src="/images/tag-gas-do-povo.png"
+                alt="Tag 3D oficial do Programa Gás do Povo"
+                fill
+                priority
+                unoptimized
+                sizes="(min-width: 1024px) 45vw, 100vw"
+                className="object-contain object-center drop-shadow-[0_25px_45px_rgba(0,0,0,0.65)] transition-transform duration-500 ease-[var(--ease-suave)] hover:scale-105"
+              />
+            </div>
           </div>
           <div className="superficie-foto absolute bottom-5 left-5 right-5 p-5 sm:right-auto sm:w-[290px]">
             <p className="font-display text-[15px] font-semibold">A Guedes Gás também participa do programa Gás do Povo!</p>
