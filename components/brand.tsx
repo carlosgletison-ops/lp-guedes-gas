@@ -3,11 +3,11 @@ import Image from "next/image";
 export function BrandMark() {
   return (
     <span className="flex flex-col">
-      <span className="flex items-center gap-2.5 sm:gap-3.5">
-        <span className="font-display text-[20px] font-extrabold leading-none tracking-[-0.03em] text-texto whitespace-nowrap sm:text-[23px]">
+      <span className="flex items-center gap-3 sm:gap-4">
+        <span className="font-display text-[20px] font-extrabold leading-none tracking-[-0.03em] text-texto whitespace-nowrap sm:text-[24px]">
           Guedes<span className="text-celeste"> Gás</span>
         </span>
-        <span className="flex items-center border-l border-linha-forte pl-2.5 sm:pl-3.5">
+        <span className="flex items-center border-l border-linha-forte pl-3 sm:pl-4">
           <Image
             src="/images/logo-ultragaz.png"
             alt="Ultragaz"
@@ -15,11 +15,11 @@ export function BrandMark() {
             height={724}
             priority
             unoptimized
-            className="h-[18px] w-auto object-contain brightness-105 sm:h-[24px]"
+            className="h-[26px] w-auto object-contain brightness-105 sm:h-[34px] lg:h-[36px]"
           />
         </span>
       </span>
-      <span className="mt-1 text-[10px] font-medium leading-none tracking-normal text-texto-3 sm:text-[11px]">
+      <span className="mt-1 text-[10px] font-medium leading-none tracking-normal text-texto-3 sm:mt-1.5 sm:text-[11.5px]">
         Revendedor oficial Ultragaz
       </span>
     </span>
