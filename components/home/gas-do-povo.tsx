@@ -18,28 +18,18 @@ export function GasDoPovo() {
   return (
     <section id="gas-do-povo" aria-labelledby="gdp-titulo" className="py-20 md:py-24 lg:py-28">
       <div className="container-site grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-        {/* Card com a Tag 3D oficial do Programa Gás do Povo */}
-        <div className="revelar relative lg:col-span-6">
-          <div className="superficie relative flex aspect-[5/4] items-center justify-center overflow-hidden rounded-[var(--radius-foto)] border border-linha p-6 sm:p-10 lg:aspect-[4/4.4]">
-            {/* Brilho radial suave de fundo no card */}
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgb(110_162_255/0.12),transparent_70%)]"
+        {/* Tag 3D oficial do Programa Gás do Povo sem card, solta e com sombra natural */}
+        <div className="revelar relative flex items-center justify-center lg:col-span-6">
+          <div className="relative flex h-[360px] w-full max-w-[360px] items-center justify-center sm:h-[420px] sm:max-w-[420px] lg:h-[480px] lg:max-w-[460px]">
+            <Image
+              src="/images/tag-gas-do-povo.png"
+              alt="Tag 3D oficial do Programa Gás do Povo"
+              fill
+              priority
+              unoptimized
+              sizes="(min-width: 1024px) 460px, 340px"
+              className="object-contain object-center drop-shadow-[0_30px_60px_rgba(0,0,0,0.7)] transition-transform duration-500 ease-[var(--ease-suave)] hover:scale-105 hover:-rotate-1 select-none"
             />
-            <div className="relative h-full w-full max-w-[340px] sm:max-w-[400px]">
-              <Image
-                src="/images/tag-gas-do-povo.png"
-                alt="Tag 3D oficial do Programa Gás do Povo"
-                fill
-                priority
-                unoptimized
-                sizes="(min-width: 1024px) 45vw, 100vw"
-                className="object-contain object-center drop-shadow-[0_25px_45px_rgba(0,0,0,0.65)] transition-transform duration-500 ease-[var(--ease-suave)] hover:scale-105"
-              />
-            </div>
-          </div>
-          <div className="superficie-foto absolute bottom-5 left-5 right-5 p-5 sm:right-auto sm:w-[290px]">
-            <p className="font-display text-[15px] font-semibold">A Guedes Gás também participa do programa Gás do Povo!</p>
           </div>
         </div>
 
