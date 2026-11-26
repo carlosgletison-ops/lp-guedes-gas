@@ -75,6 +75,11 @@
 - Ao rolar a página, o vidro ganha mais azul para manter a leitura.
 - As páginas internas têm `pt-32` ou mais para o conteúdo não ficar embaixo do header.
 
+## Seções claras (fundo branco)
+- Classe `secao-clara` na `<section>`: fundo branco, e os tokens são reescritos só dentro dela (texto e destaques em azul; linhas e cards em tom azulado). Os componentes não precisam de alteração.
+- Hoje é usada em **Unidades (mapa)** e **Perguntas frequentes**. O ritmo da home alterna azul e branco no fim: Unidades (branca), Como funciona (azul), FAQ (branca), CTA (azul).
+- Ao passar sobre uma seção branca, o header ganha 80% de azul para manter o menu legível.
+
 ## Componentes
 - **Botão de conversão:** `bg-verde text-azul font-bold rounded-xl`, com altura de 56px (hero/CTA) ou 44–48px.
 - **Botão secundário:** contornado em `border-linha-forte`, texto branco.
@@ -84,7 +89,7 @@
 ## Imagens
 | Arquivo | Uso |
 |---|---|
-| `hero-banner-azul.webp` | Hero desktop. É o `banner-hero-4k.png` com o fundo marinho trocado pelo #000FFF (o entregador e a onda foram preservados). Carregado como fundo CSS só em telas ≥1024px |
+| `hero-banner-azul.webp` | Hero desktop. Gerado a partir de `hero-banner-azul.png` (versão em alta qualidade enviada pelo cliente em 26/11), com o fundo ajustado para o #000FFF exato. Carregado como fundo CSS só em telas ≥1024px |
 | `hero-mobile-azul.webp` | Hero mobile (mesma recoloração do `hero-mobile.jpg`) |
 | `botijao-p13.png`, `botijao-p20-p45.png` | Produtos, sobre a Forma U |
 | `mapa-ceara-3d.png` | Mapa, sobre a Forma U ciano |

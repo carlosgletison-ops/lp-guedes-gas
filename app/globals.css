@@ -110,6 +110,29 @@ html[data-vidro="liquido"] .vidro {
     linear-gradient(140deg, rgb(255 255 255 / 0.22), rgb(255 255 255 / 0.04) 42%, rgb(255 255 255 / 0.1)),
     rgb(0 15 255 / 0.62);
 }
+/* =========================================================
+   SEÇÃO CLARA — fundo branco (Manual: branco ≈10% da paleta).
+   Reescreve os tokens só dentro da seção: o texto passa a ser azul
+   e os destaques em ciano viram azul (ciano sobre branco reprova).
+   ========================================================= */
+.secao-clara {
+  background: #ffffff;
+  color: #000fff;
+  --color-texto: #000fff; /* 8,3:1 */
+  --color-texto-2: #1f29ff; /* 7,4:1 */
+  --color-texto-3: #4f57ff; /* 5,1:1 */
+  --color-celeste: #000fff;
+  --color-linha: rgb(0 15 255 / 0.14);
+  --color-linha-forte: rgb(0 15 255 / 0.32);
+}
+.secao-clara .superficie {
+  background: #f2f3ff;
+  border-color: rgb(0 15 255 / 0.1);
+}
+.secao-clara :focus-visible {
+  outline-color: #000fff;
+}
+
 /* Mantido por compatibilidade com componentes antigos */
 @utility superficie-foto {
   @apply vidro;

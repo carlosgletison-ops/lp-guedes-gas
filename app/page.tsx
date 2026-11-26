@@ -15,8 +15,8 @@ export default function Home() {
     <>
       <Hero />
       <CitySelector />
-      <Produtos />
       <GasDoPovo />
+      <Produtos />
       <Diferenciais />
       <Presenca />
       <ComoFunciona />

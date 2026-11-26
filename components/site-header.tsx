@@ -46,7 +46,7 @@ export function SiteHeader() {
           <span
             aria-hidden
             className={`absolute inset-0 rounded-[inherit] bg-azul transition-opacity duration-300 ${
-              rolou || aberto ? "opacity-45" : "opacity-0"
+              rolou || aberto ? "opacity-80" : "opacity-0"
             }`}
           />
 

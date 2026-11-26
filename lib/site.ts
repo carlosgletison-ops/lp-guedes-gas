@@ -19,7 +19,7 @@ export const mensuracao = {
 
 export const navegacao = [
   { label: "Início", href: "/#inicio" },
-  { label: "Produtos", href: "/#produtos" },
   { label: "Gás do Povo", href: "/#gas-do-povo" },
+  { label: "Produtos", href: "/#produtos" },
   { label: "Unidades", href: "/#unidades" },
 ] as const;

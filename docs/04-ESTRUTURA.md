@@ -9,8 +9,8 @@ Status: ✅ implementado · 🟡 implementado com conteúdo/imagem provisória (
 | 01 | Barra superior + header fixo | — | `components/top-bar.tsx`, `site-header.tsx` | ✅ |
 | 02 | Hero | `#inicio` | `components/home/hero.tsx` | 🟡 foto de campanha |
 | 03 | Seletor rápido de cidade | `#cidades` | `components/home/city-selector.tsx` | ✅ |
-| 04 | Produtos (P13 em destaque, P20/P45) | `#produtos` | `components/home/produtos.tsx` | 🟡 ilustrações no lugar das fotos |
-| 05 | Gás do Povo | `#gas-do-povo` | `components/home/gas-do-povo.tsx` | 🟡 texto a validar, foto recortada da hero |
+| 04 | Gás do Povo | `#gas-do-povo` | `components/home/gas-do-povo.tsx` | 🟡 texto a validar, foto recortada da hero |
+| 05 | Produtos (P13 em destaque, P20/P45) | `#produtos` | `components/home/produtos.tsx` | 🟡 ilustrações no lugar das fotos |
 | 06 | Diferenciais | — | `components/home/diferenciais.tsx` | ✅ |
 | 07 | Presença regional (mapa IBGE + lista) | `#unidades` | `components/home/presenca.tsx` | ✅ |
 | 08 | Como funciona | — | `components/home/como-funciona.tsx` | ✅ |

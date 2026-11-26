@@ -11,7 +11,7 @@ export function Faq() {
   const base = useId();
 
   return (
-    <section aria-labelledby="faq-titulo" className="relative overflow-hidden py-20 md:py-24 lg:py-28">
+    <section aria-labelledby="faq-titulo" className="secao-clara relative overflow-hidden py-20 md:py-24 lg:py-28">
       <div className="container-site relative z-10 grid gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-4">
           <SectionTitle id="faq-titulo" align="left">
@@ -19,7 +19,7 @@ export function Faq() {
           </SectionTitle>
           <TrackedLink
             href="/atendimento"
-            className="mt-8 inline-flex h-12 items-center rounded-md border border-linha-forte px-5 text-[15px] font-semibold text-texto transition-[border-color,background-color,color] duration-200 hover:border-celeste hover:bg-white/5 hover:text-celeste"
+            className="mt-8 inline-flex h-12 items-center rounded-md border border-linha-forte px-5 text-[15px] font-semibold text-texto transition-[border-color,background-color,color] duration-200 hover:border-azul hover:bg-azul hover:text-white"
           >
             Ir para a central de atendimento
           </TrackedLink>
@@ -34,7 +34,7 @@ export function Faq() {
               <div
                 key={item.pergunta}
                 className={`border-b border-linha transition-colors duration-300 ${
-                  on ? "bg-white/[0.02]" : ""
+                  on ? "bg-azul/[0.03]" : ""
                 }`}
               >
                 <h3>
@@ -48,13 +48,15 @@ export function Faq() {
                   >
                     <span className={on ? "text-celeste" : "text-texto"}>{item.pergunta}</span>
                     <span
-                      className={`grid size-9 shrink-0 place-items-center rounded-lg border transition-[transform,border-color,color,background-color] duration-300 ease-[var(--ease-suave)] ${
-                        on
-                          ? "rotate-45 border-ciano bg-ciano text-azul"
-                          : "border-linha-forte text-texto-2"
+                      className={`grid size-9 shrink-0 place-items-center rounded-lg border transition-[border-color,color,background-color] duration-300 ease-[var(--ease-suave)] ${
+                        on ? "border-azul bg-azul text-white" : "border-linha-forte text-texto-2"
                       }`}
                     >
-                      <Plus aria-hidden size={18} />
+                      <Plus
+                        aria-hidden
+                        size={18}
+                        className={`transition-transform duration-300 ease-[var(--ease-suave)] ${on ? "rotate-45" : ""}`}
+                      />
                     </span>
                   </button>
                 </h3>

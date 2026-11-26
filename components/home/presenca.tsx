@@ -24,7 +24,7 @@ export function Presenca() {
   const fortaleza = mapaCeara.pontos.fortaleza;
 
   return (
-    <section id="unidades" aria-labelledby="unidades-titulo" className="py-20 md:py-24 lg:py-28">
+    <section id="unidades" aria-labelledby="unidades-titulo" className="secao-clara py-20 md:py-24 lg:py-28">
       <div className="container-site">
         <SectionTitle id="unidades-titulo">A Guedes Gás está perto de você!</SectionTitle>
         <p className="revelar mx-auto mt-5 max-w-[46ch] text-center text-texto-2">
@@ -46,7 +46,7 @@ export function Presenca() {
                     onFocus={() => setAtivo(u.slug)}
                     onBlur={() => setAtivo(null)}
                     className={`group flex items-center gap-4 rounded-[14px] px-4 py-4 transition-colors duration-200 sm:px-5 sm:py-5 ${
-                      ativo === u.slug ? "bg-white/[0.06]" : ""
+                      ativo === u.slug ? "bg-azul/[0.06]" : ""
                     }`}
                   >
                     <span className="w-6 shrink-0 font-display text-sm tabular-nums text-texto-3">{u.ordem}</span>
