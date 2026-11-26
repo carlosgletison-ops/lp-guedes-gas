@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ArrowRight, Info } from "lucide-react";
+import { ArcoU } from "@/components/brand-shapes";
 import { SectionTitle } from "@/components/section-title";
 import { TrackedLink } from "@/components/tracked-link";
 import { WhatsAppIcon } from "@/components/icons";
@@ -18,13 +19,14 @@ export function Produtos() {
           <article className="revelar superficie relative flex flex-col gap-8 p-6 pt-0 sm:min-h-[400px] sm:justify-center sm:p-8 sm:pr-[48%] lg:col-span-7 lg:min-h-[420px] lg:p-10 lg:pr-[48%]">
             <div className="-mt-24 flex h-[280px] justify-center sm:absolute sm:right-2 sm:top-1/2 sm:mt-0 sm:h-[400px] sm:w-[48%] sm:-translate-y-1/2 sm:items-center lg:right-4 lg:h-[440px] lg:w-[48%]">
               <div className="relative h-full w-full max-w-[280px] sm:max-w-[360px]">
+                {/* Forma U — uso acolhimento (Manual pág. 33): degradê ciano→verde atrás do produto */}
+                <ArcoU cor="ciano-verde" className="absolute inset-x-[6%] bottom-[10%] top-[16%]" />
                 <Image
                   src="/images/botijao-p13.png"
                   alt="Botijão de gás P13 Ultragaz"
                   fill
-                  className="object-contain object-center drop-shadow-[0_25px_35px_rgba(0,0,0,0.5)] transition-transform duration-300 hover:scale-[1.03]"
+                  className="object-contain object-center drop-shadow-[0_18px_22px_rgba(0,6,110,0.35)] transition-transform duration-300 hover:scale-[1.03]"
                   sizes="(min-width: 1024px) 420px, (min-width: 640px) 360px, 280px"
-                  priority
                 />
               </div>
             </div>
@@ -36,7 +38,7 @@ export function Produtos() {
               <p className="mt-3 max-w-[38ch] text-texto-2">{t.p13.texto}</p>
               <TrackedLink
                 href="/atendimento"
-                className="mt-7 inline-flex h-12 items-center gap-2.5 rounded-md bg-verde px-5 text-[15px] font-semibold text-white shadow-lg shadow-verde/20 transition-colors duration-200 hover:bg-verde-escuro"
+                className="mt-7 inline-flex h-12 items-center gap-2.5 rounded-xl bg-verde px-5 text-[15px] font-bold text-azul transition-colors duration-200 hover:bg-verde-escuro"
               >
                 <WhatsAppIcon className="size-[18px]" />
                 {t.cta}
@@ -48,11 +50,13 @@ export function Produtos() {
           <article className="revelar superficie relative flex flex-col p-6 pt-0 sm:min-h-[400px] sm:p-8 sm:pt-0 lg:col-span-5 lg:min-h-[420px] lg:p-10 lg:pt-0">
             <div className="-mt-24 flex h-[280px] items-end justify-center sm:-mt-28 sm:h-[360px] lg:-mt-32 lg:h-[410px]">
               <div className="relative h-full w-full max-w-[290px] sm:max-w-[380px]">
+                {/* Forma U — uso acolhimento, ciano sólido */}
+                <ArcoU cor="ciano" className="absolute inset-x-[8%] bottom-0 top-[18%]" />
                 <Image
                   src="/images/botijao-p20-p45.png"
                   alt="Cilindros de gás P20 e P45 Ultragaz"
                   fill
-                  className="object-contain object-bottom drop-shadow-[0_25px_35px_rgba(0,0,0,0.5)] transition-transform duration-300 hover:scale-[1.03]"
+                  className="object-contain object-bottom drop-shadow-[0_18px_22px_rgba(0,6,110,0.35)] transition-transform duration-300 hover:scale-[1.03]"
                   sizes="(min-width: 1024px) 380px, (min-width: 640px) 340px, 280px"
                 />
               </div>

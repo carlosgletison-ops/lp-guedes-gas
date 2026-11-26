@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BrandMark } from "./brand";
+import { PatternU } from "./brand-shapes";
 import { linkCentral, unidades } from "@/data/unidades";
 import { navegacao } from "@/lib/site";
 
@@ -9,8 +10,10 @@ import { navegacao } from "@/lib/site";
  */
 export function SiteFooter() {
   return (
-    <footer className="border-t border-linha">
-      <div className="container-site grid gap-12 py-14 md:grid-cols-2 lg:grid-cols-12 lg:gap-8 lg:py-16">
+    <footer className="relative overflow-hidden">
+      {/* Pattern Ultragaz (Manual págs. 36–38) como faixa de assinatura */}
+      <PatternU className="-mt-[3%] h-auto w-full px-[1.6%] opacity-100" />
+      <div className="container-site grid gap-12 pb-14 pt-10 md:grid-cols-2 lg:grid-cols-12 lg:gap-8 lg:pb-16 lg:pt-12">
         <div className="lg:col-span-4">
           <BrandMark />
           <p className="mt-5 max-w-[34ch] text-texto-2">

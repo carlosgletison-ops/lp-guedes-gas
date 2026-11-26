@@ -17,6 +17,9 @@ Marque cada item quando estiver resolvido. Nada aqui foi inventado no site. Onde
 - [ ] **Foto humanizada para a seção Gás do Povo** (atendimento real em unidade, de preferência). Hoje é um recorte da foto da hero (luva e botijão).
 - [ ] **Imagem de compartilhamento (Open Graph)** em 1200×630. Hoje usa a foto da hero.
 
+- [ ] **Fonte Mangueira** (tipografia principal do Manual Ultragaz) é comercial: hoje os títulos usam **Outfit** como substituta. Se a Ultragaz/revenda fornecer os arquivos licenciados, trocar em `app/layout.tsx` (ver docs/03).
+- [ ] **Autorização de uso dos grafismos Ultragaz** (onda, Forma U, pattern, logo): o próprio manual restringe o uso dos materiais a terceiros autorizados — confirmar com a Ultragaz que a revenda pode aplicá-los no site.
+
 ## Jurídico e técnico
 - [ ] Razão social, CNPJ e endereço legal para o rodapé (não serão inventados).
 - [ ] Texto da Política de Privacidade (e da política de cookies, se houver pixel ou GA). Hoje `/politica-de-privacidade` é um **rascunho** com `noindex`.

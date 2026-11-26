@@ -75,7 +75,7 @@ export function UnitCard({ u, selecionada }: { u: Unidade; selecionada: boolean 
             href={u.whatsapp.url}
             evento="whatsapp_click"
             params={params}
-            className="inline-flex min-h-14 items-center justify-center gap-2.5 rounded-md bg-verde px-5 py-3 text-center text-base font-semibold text-white transition-colors duration-200 hover:bg-verde-escuro"
+            className="inline-flex min-h-14 items-center justify-center gap-2.5 rounded-xl bg-verde px-5 py-3 text-center text-base font-bold text-azul transition-colors duration-200 hover:bg-verde-escuro"
           >
             <WhatsAppIcon className="size-5" />
             Pedir pelo WhatsApp — {u.cidade}

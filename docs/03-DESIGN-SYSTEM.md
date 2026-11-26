@@ -1,75 +1,93 @@
-# 03 — Design system · direção "Noite azul" (v2)
+# 03 — Design system · v3 "Azul Ultragaz" (Manual de Marca)
 
-> **v2 (23/11/2026):** a direção mudou de "editorial claro" para um **ambiente monocromático em azul profundo**, a pedido do cliente, com base na referência do Figma ("Interactive Website — Figma UI Design Tutorial", um site de plantas em verde-escuro). Mantivemos a lógica da referência e trocamos o verde-oliva pelo azul da marca.
+> **v3 (26/11/2026):** o projeto segue o **Manual de Marca Ultragaz**. O fundo passou a ser o **azul oficial chapado (#000FFF)**, no lugar do azul-marinho da v2. Foram adicionados os grafismos oficiais (Onda, Forma U e Pattern), o header virou flutuante e o vidro líquido está em teste.
+> Fonte: `UG_MANUAL_DE_MARCA_ULTRAGAZ.pdf` (66 páginas). As páginas citadas abaixo são as do manual.
 
-## O que veio da referência
-| Referência (plantas) | Guedes Gás |
+## Paleta oficial (pág. 7)
+
+| Cor | Pantone | Hex | Proporção | Uso no site |
+|---|---|---|---|---|
+| Azul | 2728 C | **#000FFF** | ~50% | Fundo de todas as páginas (`bg-noite` = `bg-azul`) |
+| Ciano | 3533 C | **#00FFFF** | ~20% | Destaques de texto, ícones, Forma U, números dos passos |
+| Branco | — | #FFFFFF | ~10% | Texto, Forma U branca (Gás do Povo), pattern |
+| Verde | 3561 C | **#00FF00** | ~10% | Botões de conversão, pattern, degradês |
+| Cinza | Cool Gray 4 C | #BBBCBC | ~5% | Reserva |
+| Preto | — | #000000 | ~5% | Reserva |
+
+**Degradês oficiais:** azul→ciano e verde→ciano, sempre na **horizontal** (pág. 7).
+
+### Contraste (WCAG AA)
+| Par | Contraste |
 |---|---|
-| Um único ambiente escuro em todas as seções, o que traz harmonia | Fundo `noite` #061430 do topo ao rodapé |
-| Cards translúcidos com borda fina clara e raio grande | Utilitários `superficie` e `superficie-foto`, com raio de 22px |
-| Foto protagonista com cards flutuando sobre as bordas | Foto do entregador com cards de "Unidades" e "Gás do Povo" |
-| Títulos de seção centralizados com colchetes nos cantos | Componente `<SectionTitle>` com colchetes em `celeste` |
-| Botões contornados finos | Botão secundário contornado ("Ver unidades") |
-| Ícone em quadradinho contornado nos cards | Seta em quadrado de 40px nos cards de cidade, que fica verde no hover |
-| Produto recortado "saindo" do card | **Previsto para a seção Produtos**, assim que chegarem as fotos recortadas do P13/P20/P45 |
+| Branco sobre azul #000FFF | 8,3:1 ✅ |
+| Ciano sobre azul | 6,6:1 ✅ |
+| `texto-2` #E0E2FF sobre azul | 6,9:1 ✅ |
+| `texto-3` #C2C6FF sobre azul | 5,1:1 ✅ |
+| **Azul sobre verde #00FF00 (botões)** | 6,1:1 ✅ |
+| ~~Branco sobre verde~~ | 1,4:1 ❌, por isso os botões verdes usam **texto azul** |
 
-**Ajustes em relação ao briefing original:** o briefing vetava glassmorphism e cantos muito arredondados. A referência escolhida pelo cliente usa os dois. Adotei os dois de forma **contida**:
-- O desfoque aparece só nos cards que ficam sobre a foto (`superficie-foto`), onde ajuda a leitura. Os demais cards são translúcidos, sem desfoque.
-- Não há brilhos, glow, neon ou gradiente roxo. A única "luz" é um radial azul muito suave atrás da foto da hero.
-- Continuam proibidos: pílulas, navbar em cápsula, botões ovais, blobs, partículas e ícones em círculos coloridos.
+> Os nomes de token `noite`, `noite-2` e `celeste` foram mantidos para não quebrar componentes. Hoje `noite` = azul #000FFF e `celeste` = ciano #00FFFF.
 
-## Cores
+## Tipografia (págs. 20–21)
+- O manual define **Mangueira** (títulos e textos) e **Roboto** (tipografia de sistema).
+- No site: **Roboto** (oficial) no texto e **Outfit** nos títulos, como substituta da Mangueira. A Mangueira é uma fonte comercial e não está no Google Fonts. Para usar a oficial, coloque os arquivos licenciados (`.woff2`) em `app/fonts/` e troque o `Outfit` por `next/font/local` em `app/layout.tsx`.
 
-| Token | Hex | Uso |
-|---|---|---|
-| `noite` | #061430 | Fundo de toda a página |
-| `noite-2` / `noite-3` | #0A1E44 / #10295A | Superfícies sólidas e hover |
-| `azul` | #0054D9 | Azul Ultragaz em áreas sólidas (CTA final, luz ambiente) |
-| `azul-profundo` | #003579 | Reserva (rodapé e faixas) |
-| `celeste` | #6EA2FF | Destaques tipográficos, ícones, colchetes e foco. Contraste de 7,2:1 sobre `noite` |
-| `verde` | #00843A | **Somente botões de conversão** (texto branco, 4,8:1) |
-| `verde-escuro` | #006F31 | Hover do botão |
-| `texto` | #FFFFFF | Texto principal |
-| `texto-2` | #B4C0D6 | Texto secundário (9,9:1) |
-| `texto-3` | #8392AD | Legendas e números (5,8:1) |
-| `linha` / `linha-forte` | branco 12% / 24% | Bordas e divisórias |
+## Marca Ultragaz (págs. 9–18)
+- Use a versão **negativa (branca)** sobre o azul: `public/images/logo-ultragaz.png`.
+- **Sem sombras, filtros ou efeitos** sobre a marca (pág. 18). O filtro `brightness` que existia foi removido.
+- Largura mínima no digital: **100px** (pág. 17). No site, o logo tem 34px de altura no celular, o que dá cerca de 102px de largura.
+- **Arejamento** (pág. 15): o espaço livre em volta da marca é a largura da letra "u". O divisor fica a 16–20px do logo.
 
-Proporção de uso: cerca de 85% do ambiente é `noite`, cerca de 10% são superfícies e texto, e menos de 5% são destaques (`celeste` e `verde`).
+## Grafismos oficiais (`components/brand-shapes.tsx`)
 
-## Tipografia
-- **Manrope** (`font-display`) nos títulos, peso 700, tracking de −0,03em. Mais leve que na v1, mais próxima da referência.
-- **Inter** (`font-sans`) no texto e na interface.
+### Forma Onda — `<OndaUltragaz degrade="azul-ciano" | "azul-verde" | ...>` (págs. 24–29)
+- Sempre em degradê horizontal. **Nunca sólida** em peças digitais.
+- **No máximo 2 ondas por peça**, com distância mínima entre elas igual à espessura da onda.
+- Nunca na vertical e nunca em proporção pequena.
+- **Onde está:** CTA final ("Não fique sem gás!"), na composição da peça "vamos energizar" (pág. 55). O banner da hero já tem a onda própria.
 
-| Utilitário | Tamanho | Uso |
-|---|---|---|
-| `text-display` | 36 → 60px | H1 |
-| `text-h2` | 28 → 40px | Títulos de seção (via `<SectionTitle>`) |
-| `text-lead` | 17 → 19px | Texto de apoio |
+### Forma U (págs. 31–35)
+- `<ArcoU cor="ciano" | "verde" | "branco" | "ciano-verde">`: **uso acolhimento**, um arco atrás de um elemento. Fica próximo do objeto e nunca tem sombra.
+  - P13: degradê ciano→verde.
+  - P20/P45: ciano.
+  - Mapa do Ceará: ciano.
+  - Selo Gás do Povo: branco.
+- `<BoxU>`: **uso box**, base para títulos curtos e grandes. Nada de texto pequeno ou longo dentro dele (pág. 35).
+- Classes CSS disponíveis: `forma-u-arco`, `forma-u-box`, `degrade-ciano-verde`, `degrade-azul-ciano`.
 
-## Superfícies e raios
-- `superficie`: gradiente de branco 7,5% → 2,5%, borda `linha`, raio de 22px. Usada nos cards de conteúdo.
-- `superficie-foto`: `noite` a 62%, desfoque de 14px, borda branca de 16%. Só para cards sobre fotografia.
-- Raios: botões com 6–8px, cards com 22px, fotos com 28px, ícones em quadrado com 8px.
+### Pattern (págs. 36–38) — `<PatternU>`
+- U em cores sólidas alternadas (ciano, branco, verde) sobre o azul.
+- **Onde está:** faixa de assinatura no topo do rodapé.
 
-## Grid e espaçamento
-- `container-site`: até 1280px de conteúdo, gutter de 16 / 24 / 40px.
-- Hero: texto em 5 colunas e foto em 7 (≥1280px). Entre 1024 e 1279px, 6/6 (o card de unidades fica oculto para não cobrir o rosto).
-- Espaçamento em múltiplos de 8px. Seções com 80–112px de respiro vertical.
+### Iconografia (págs. 39–40)
+- Sempre **outline** (Lucide, traço de 1,5–2), em branco, ciano ou verde sobre o azul. Os ícones são elementos de apoio, nunca protagonistas.
+
+## Vidro líquido (TESTE)
+- Classe `vidro`: desfoque + saturação + reflexo especular nas bordas. Funciona em todos os navegadores.
+- **Refração real** (Chrome, Edge e Samsung Internet): o `components/liquid-glass.tsx` injeta um filtro SVG e liga `html[data-vidro="liquido"]`. Safari e Firefox ficam só com a versão em CSS.
+- Variante `vidro vidro-azul`: tem mais azul, para cards sobre a foto e a onda colorida (garante a leitura do texto branco).
+- **Onde está:** header flutuante, menu mobile, cards da hero e barra inferior do celular.
+- **Para desligar a refração:** remova `<LiquidGlass />` de `app/layout.tsx`.
+- **Para voltar a superfícies sólidas:** troque `vidro` por `bg-azul` com borda `border-linha`.
+
+## Header
+- **Flutuante** (`fixed`, com 12–16px de distância do topo), em vidro, sem barra de ponta a ponta. A antiga barra superior (`top-bar.tsx`) foi removida.
+- Ao rolar a página, o vidro ganha mais azul para manter a leitura.
+- As páginas internas têm `pt-32` ou mais para o conteúdo não ficar embaixo do header.
 
 ## Componentes
-- **Botão de conversão:** verde sólido, altura de 56px (hero) ou 44–48px (header e barra mobile), com ícone do WhatsApp.
-- **Botão secundário:** contornado em `linha-forte`, com hover em `texto` e fundo branco 5%.
-- **Card de cidade:** número 01–05, nome, bairro e seta em quadrado. No hover, sobe 4px, a borda fica mais forte e a seta fica verde.
-- **Faixa de destaques:** quatro itens com divisórias verticais, logo abaixo da hero.
-- **`<SectionTitle>`:** título centralizado com colchetes nos cantos superior esquerdo e inferior direito.
+- **Botão de conversão:** `bg-verde text-azul font-bold rounded-xl`, com altura de 56px (hero/CTA) ou 44–48px.
+- **Botão secundário:** contornado em `border-linha-forte`, texto branco.
+- **Cards** (`superficie`): tinta branca de 11%→5% sobre o azul, borda branca de 20% e raio de 22px.
+- **Números dos passos:** quadrado ciano com número azul.
 
-## Movimento
-- Curva `--ease-suave`: cubic-bezier(0.22, 1, 0.36, 1).
-- Na hero, as linhas do H1 sobem por máscara, o texto e os botões surgem com fade, a foto entra com escala de 1.05 → 1, e os cards flutuantes entram por último (fade + 18px).
-- Hover em 200–300ms. Não há animação contínua.
-- Com `prefers-reduced-motion`, as animações são desativadas e o layout final é idêntico.
+## Imagens
+| Arquivo | Uso |
+|---|---|
+| `hero-banner-azul.webp` | Hero desktop. É o `banner-hero-4k.png` com o fundo marinho trocado pelo #000FFF (o entregador e a onda foram preservados). Carregado como fundo CSS só em telas ≥1024px |
+| `hero-mobile-azul.webp` | Hero mobile (mesma recoloração do `hero-mobile.jpg`) |
+| `botijao-p13.png`, `botijao-p20-p45.png` | Produtos, sobre a Forma U |
+| `mapa-ceara-3d.png` | Mapa, sobre a Forma U ciano |
+| `tag-gas-do-povo.png` | Selo, sobre a Forma U branca |
 
-## Acessibilidade
-- Foco com contorno `celeste` de 2px.
-- Todos os pares de texto passam no WCAG AA (os valores estão na tabela).
-- Alvos de toque de pelo menos 48px no mobile.
+Os originais com fundo marinho continuam na pasta, caso seja preciso refazer a recoloração.

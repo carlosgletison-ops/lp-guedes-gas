@@ -1,21 +1,26 @@
 import Image from "next/image";
 
+/**
+ * Assinatura Guedes Gás + marca Ultragaz (versão negativa, sobre o azul).
+ * Manual Ultragaz: sem sombras/efeitos na marca (pág. 18), largura mínima
+ * de 100px no digital (pág. 17) e área de arejamento livre (pág. 15).
+ */
 export function BrandMark() {
   return (
     <span className="flex flex-col">
-      <span className="flex items-center gap-3 sm:gap-4">
-        <span className="font-display text-[20px] font-extrabold leading-none tracking-[-0.03em] text-texto whitespace-nowrap sm:text-[24px]">
-          Guedes<span className="text-celeste"> Gás</span>
+      <span className="flex items-center gap-4 sm:gap-5">
+        <span className="whitespace-nowrap font-display text-[20px] font-extrabold leading-none tracking-[-0.03em] text-texto sm:text-[24px]">
+          Guedes<span className="text-ciano"> Gás</span>
         </span>
-        <span className="flex items-center border-l border-linha-forte pl-3 sm:pl-4">
+        <span className="flex items-center border-l border-linha-forte pl-4 sm:pl-5">
           <Image
             src="/images/logo-ultragaz.png"
             alt="Ultragaz"
             width={2172}
             height={724}
             priority
-            unoptimized
-            className="h-[28px] w-auto object-contain brightness-105 sm:h-[36px] lg:h-[40px]"
+            sizes="130px"
+            className="h-[34px] w-auto object-contain sm:h-[38px] lg:h-[42px]"
           />
         </span>
       </span>

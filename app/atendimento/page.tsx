@@ -14,11 +14,7 @@ export const metadata: Metadata = {
 
 export default function AtendimentoPage() {
   return (
-    <section aria-labelledby="central-titulo" className="relative pb-20 pt-12 md:pb-24 md:pt-16 lg:pb-28">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-[radial-gradient(50%_70%_at_50%_0%,rgb(0_84_217/0.18),transparent_70%)]"
-      />
+    <section aria-labelledby="central-titulo" className="relative pb-20 pt-32 md:pb-24 md:pt-36 lg:pb-28 lg:pt-40">
       <div className="container-site relative max-w-[1120px]">
         <SectionTitle as="h1" id="central-titulo">
           Qual unidade atende você?

@@ -18,27 +18,17 @@ const destaques = [
 
 export function Hero() {
   return (
-    <section id="inicio" aria-labelledby="hero-titulo" className="relative overflow-hidden bg-noite">
-      {/* Fundo oficial da Hero Desktop (horizontal 4K) */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 select-none overflow-hidden"
-      >
-        <Image
-          src="/images/banner-hero-4k.png"
-          alt=""
-          fill
-          priority
-          unoptimized
-          className="hidden object-cover lg:block lg:object-right xl:object-center"
-        />
+    <section
+      id="inicio"
+      aria-labelledby="hero-titulo"
+      // Banner oficial da hero (desktop) como fundo CSS dentro de media query:
+      // só é baixado em telas ≥1024px — no celular não compete com a foto mobile.
+      // Fundo recolorido para o Azul Ultragaz #000FFF (original: banner-hero-4k.png).
+      className="relative overflow-hidden bg-noite lg:bg-[url('/images/hero-banner-azul.webp')] lg:bg-cover lg:bg-right lg:bg-no-repeat xl:bg-center"
+    >
 
-        {/* Gradiente para leitura impecável no Desktop */}
-        <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-noite via-noite/85 to-transparent lg:w-3/5 lg:via-noite/75" />
-        <div className="hidden lg:block absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-noite to-transparent" />
-      </div>
-
-      <div className="container-site relative grid items-center gap-10 pb-14 pt-8 md:pb-20 md:pt-12 lg:grid-cols-12 lg:gap-8 lg:pb-24 lg:pt-14">
+      {/* pt extra: o header flutua por cima da hero */}
+      <div className="container-site relative grid items-center gap-10 pb-14 pt-28 md:pb-20 md:pt-32 lg:grid-cols-12 lg:gap-8 lg:pb-24 lg:pt-36">
         {/* Conteúdo: Título, Descrição e CTAs */}
         <div className="relative z-10 lg:col-span-6 xl:col-span-5">
           <p className="anim-surgir flex items-center gap-2 text-[15px] font-medium text-celeste">
@@ -73,7 +63,7 @@ export function Hero() {
             <TrackedLink
               id="hero-cta"
               href="/atendimento"
-              className="inline-flex h-14 items-center justify-center gap-2.5 rounded-md bg-verde px-4 text-[15px] font-semibold text-white transition-[background-color,transform] duration-200 hover:bg-verde-escuro active:scale-[0.985] min-[360px]:text-base sm:px-6 sm:whitespace-nowrap"
+              className="inline-flex h-14 items-center justify-center gap-2.5 rounded-xl bg-verde px-4 text-[15px] font-bold text-azul transition-[background-color,transform] duration-200 hover:bg-verde-escuro active:scale-[0.985] min-[360px]:text-base sm:px-6 sm:whitespace-nowrap"
             >
               <WhatsAppIcon className="size-5" />
               Pedir meu gás pelo WhatsApp
@@ -100,19 +90,19 @@ export function Hero() {
           {/* No Mobile / Tablet (< lg): Apenas a imagem do entregador direta, sem card nem borda */}
           <div className="relative mx-auto mt-2 w-full max-w-[360px] sm:max-w-[420px] aspect-[4/4.8] lg:hidden">
             <Image
-              src="/images/hero-mobile.jpg"
+              src="/images/hero-mobile-azul.webp"
               alt="Entregador Ultragaz da Guedes Gás com botijão"
               fill
               priority
-              unoptimized
-              className="object-cover object-bottom pointer-events-none select-none"
+              sizes="(min-width: 640px) 420px, 360px"
+              className="pointer-events-none select-none object-cover object-bottom"
             />
           </div>
 
           {/* No Desktop (lg+): Cards flutuantes sobre o banner lateral */}
           {/* Card flutuante — unidades */}
           <div
-            className="anim-card superficie-foto hidden lg:block absolute right-4 top-4 xl:right-0 xl:top-8 z-20 w-[240px] sm:w-[260px] p-5"
+            className="anim-card vidro vidro-azul hidden lg:block absolute right-4 top-4 xl:right-0 xl:top-8 z-20 w-[240px] sm:w-[260px] p-5"
             style={atraso(760)}
           >
             <p className="font-display text-[15px] font-semibold">Cinco unidades no Ceará</p>
@@ -128,10 +118,10 @@ export function Hero() {
 
           {/* Card flutuante — Gás do Povo */}
           <div
-            className="anim-card superficie-foto hidden lg:flex absolute bottom-4 left-4 xl:-left-6 xl:bottom-10 z-20 items-start gap-3.5 p-4 sm:w-[300px]"
+            className="anim-card vidro vidro-azul hidden lg:flex absolute bottom-4 left-4 xl:-left-6 xl:bottom-10 z-20 items-start gap-3.5 p-4 sm:w-[300px]"
             style={atraso(880)}
           >
-            <span className="grid size-10 shrink-0 place-items-center rounded-lg border border-linha-forte text-celeste">
+            <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-ciano text-azul">
               <HandHeart aria-hidden size={20} strokeWidth={1.75} />
             </span>
             <span>

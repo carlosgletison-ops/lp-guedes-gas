@@ -16,7 +16,7 @@ export const metadata: Metadata = {
  */
 export default function PoliticaPage() {
   return (
-    <section className="pb-20 pt-12 md:pb-24 md:pt-16">
+    <section className="pb-20 pt-32 md:pb-24 md:pt-36">
       <div className="container-site max-w-[760px]">
         <SectionTitle as="h1">Política de privacidade</SectionTitle>
 

@@ -1,5 +1,4 @@
 import { ArrowUpRight } from "lucide-react";
-import { UltragazAmbientGlow } from "@/components/brand-shapes";
 import { SectionTitle } from "@/components/section-title";
 import { TrackedLink } from "@/components/tracked-link";
 import { linkCentral, unidades } from "@/data/unidades";
@@ -11,9 +10,6 @@ import { linkCentral, unidades } from "@/data/unidades";
 export function CitySelector() {
   return (
     <section id="cidades" aria-labelledby="cidades-titulo" className="relative overflow-hidden py-20 md:py-24 lg:py-28">
-      {/* Halo de luz sutil da marca Ultragaz */}
-      <UltragazAmbientGlow color="blue" className="-bottom-20 left-1/4 h-80 w-80 opacity-15" />
-
       <div className="container-site relative z-10">
         <SectionTitle id="cidades-titulo">Onde você precisa de gás?</SectionTitle>
         <p className="mx-auto mt-5 max-w-[46ch] text-center text-texto-2">
@@ -40,7 +36,7 @@ export function CitySelector() {
                     <span className="mt-1 block text-sm text-texto-3">{u.endereco.bairro}</span>
                   </span>
                 </span>
-                <span className="grid size-10 shrink-0 place-items-center self-center rounded-lg border border-linha-forte text-texto-2 transition-colors duration-300 group-hover:border-verde group-hover:bg-verde group-hover:text-white lg:absolute lg:right-6 lg:top-6 lg:self-auto">
+                <span className="grid size-10 shrink-0 place-items-center self-center rounded-lg border border-linha-forte text-texto-2 transition-colors duration-300 group-hover:border-verde group-hover:bg-verde group-hover:text-azul lg:absolute lg:right-6 lg:top-6 lg:self-auto">
                   <ArrowUpRight aria-hidden size={18} />
                   <span className="sr-only">Ver unidade de {u.cidade}</span>
                 </span>

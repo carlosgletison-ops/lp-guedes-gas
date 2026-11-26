@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import { ArcoU } from "@/components/brand-shapes";
 import { SectionTitle } from "@/components/section-title";
 import { TrackedLink } from "@/components/tracked-link";
 import { WhatsAppIcon } from "@/components/icons";
@@ -53,7 +54,7 @@ export function Presenca() {
                       <span className="block font-display text-lg font-semibold leading-tight">{u.cidade}</span>
                       <span className="mt-1 block text-sm leading-snug text-texto-3">{enderecoCompleto(u)}</span>
                     </span>
-                    <span className="grid size-10 shrink-0 place-items-center rounded-lg border border-linha-forte text-texto-2 transition-colors duration-300 group-hover:border-verde group-hover:bg-verde group-hover:text-white">
+                    <span className="grid size-10 shrink-0 place-items-center rounded-lg border border-linha-forte text-texto-2 transition-colors duration-300 group-hover:border-verde group-hover:bg-verde group-hover:text-azul">
                       <ArrowUpRight aria-hidden size={18} />
                     </span>
                   </TrackedLink>
@@ -63,7 +64,9 @@ export function Presenca() {
           </div>
 
           {/* Mapa */}
-          <figure className="revelar superficie relative flex flex-col items-center justify-center overflow-hidden px-6 py-8 lg:order-1 lg:col-span-6 lg:py-10">
+          <figure className="revelar relative flex flex-col items-center justify-end overflow-hidden px-6 pb-8 pt-16 lg:order-1 lg:col-span-6 lg:pt-20">
+            {/* Forma U — uso acolhimento (Manual pág. 33): base ciano para o mapa */}
+            <ArcoU cor="ciano" className="absolute inset-0" />
             <div className="relative mt-2 flex w-full max-w-[320px] sm:max-w-[420px] items-center justify-center">
               {/* Modelo 3D PNG abaixo como mapa base */}
               <div className="pointer-events-none absolute inset-0 flex items-center justify-center select-none">
@@ -72,9 +75,8 @@ export function Presenca() {
                   alt="Mapa 3D do Ceará estilizado"
                   width={1283}
                   height={1226}
-                  unoptimized
-                  priority
-                  className="h-full w-full object-contain scale-[1.42] translate-y-3 drop-shadow-[0_20px_40px_rgba(0,100,255,0.3)]"
+                  sizes="(min-width: 1024px) 600px, 100vw"
+                  className="h-full w-full object-contain scale-[1.42] translate-y-3 drop-shadow-[0_16px_22px_rgba(0,6,110,0.35)]"
                 />
               </div>
 
@@ -90,8 +92,8 @@ export function Presenca() {
                 </title>
 
                 {/* Referência: capital */}
-                <circle cx={fortaleza.x} cy={fortaleza.y} r="3" fill="#8392ad" />
-                <text x={fortaleza.x + 8} y={fortaleza.y + 4} fontSize="12" fill="#8392ad" className="font-sans font-medium">
+                <circle cx={fortaleza.x} cy={fortaleza.y} r="3" fill="#ffffff" />
+                <text x={fortaleza.x + 8} y={fortaleza.y + 4} fontSize="12" fill="#ffffff" stroke="#000fff" strokeWidth={3} paintOrder="stroke" className="font-sans font-medium">
                   Fortaleza
                 </text>
 
@@ -105,14 +107,14 @@ export function Presenca() {
                         cx={p.x}
                         cy={p.y}
                         r={on ? 14 : 10}
-                        fill="rgb(110 162 255 / 0.25)"
+                        fill="rgb(0 255 255 / 0.28)"
                         className="transition-all duration-300"
                       />
                       <circle
                         cx={p.x}
                         cy={p.y}
                         r={on ? 6 : 5}
-                        fill={on ? "#00843a" : "#6ea2ff"}
+                        fill={on ? "#00ff00" : "#00ffff"} stroke="#000fff" strokeWidth={2}
                         className="transition-all duration-300"
                       />
                       <text
@@ -122,7 +124,10 @@ export function Presenca() {
                         fontSize="13"
                         fontWeight={700}
                         fill="#ffffff"
-                        className="font-sans drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)]"
+                        stroke="#000fff"
+                        strokeWidth={4}
+                        paintOrder="stroke"
+                        className="font-sans"
                       >
                         {u.cidade}
                       </text>
@@ -131,7 +136,7 @@ export function Presenca() {
                 })}
               </svg>
             </div>
-            <figcaption className="relative z-10 mt-4 text-center text-xs text-texto-3">
+            <figcaption className="relative z-10 mt-4 text-center text-xs font-medium text-azul">
               Posições pelo centro de cada município · Fonte: IBGE
             </figcaption>
           </figure>
@@ -140,7 +145,7 @@ export function Presenca() {
         <div className="mt-10 flex justify-center">
           <TrackedLink
             href="/atendimento"
-            className="inline-flex h-14 items-center gap-2.5 rounded-md bg-verde px-7 text-base font-semibold text-white transition-colors duration-200 hover:bg-verde-escuro"
+            className="inline-flex h-14 items-center gap-2.5 rounded-xl bg-verde px-7 text-base font-bold text-azul transition-colors duration-200 hover:bg-verde-escuro"
           >
             <WhatsAppIcon className="size-5" />
             Escolher minha unidade

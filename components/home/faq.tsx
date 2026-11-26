@@ -2,7 +2,6 @@
 
 import { useId, useState } from "react";
 import { Plus } from "lucide-react";
-import { UltragazAmbientGlow, UltragazWave } from "@/components/brand-shapes";
 import { SectionTitle } from "@/components/section-title";
 import { TrackedLink } from "@/components/tracked-link";
 import { faq } from "@/data/faq";
@@ -13,15 +12,6 @@ export function Faq() {
 
   return (
     <section aria-labelledby="faq-titulo" className="relative overflow-hidden py-20 md:py-24 lg:py-28">
-      {/* Elementos gráficos de fundo oficiais Ultragaz */}
-      <UltragazWave
-        variant="azul-ciano"
-        opacity={0.12}
-        className="absolute -top-12 left-0 right-0 h-44 w-full rotate-180"
-      />
-      <UltragazAmbientGlow color="blue" className="top-1/3 -left-20 h-80 w-80 opacity-15" />
-      <UltragazAmbientGlow color="cyan" className="bottom-0 right-10 h-72 w-72 opacity-15" />
-
       <div className="container-site relative z-10 grid gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-4">
           <SectionTitle id="faq-titulo" align="left">
@@ -60,7 +50,7 @@ export function Faq() {
                     <span
                       className={`grid size-9 shrink-0 place-items-center rounded-lg border transition-[transform,border-color,color,background-color] duration-300 ease-[var(--ease-suave)] ${
                         on
-                          ? "rotate-45 border-celeste bg-celeste/10 text-celeste shadow-[0_0_12px_rgba(0,229,255,0.25)]"
+                          ? "rotate-45 border-ciano bg-ciano text-azul"
                           : "border-linha-forte text-texto-2"
                       }`}
                     >

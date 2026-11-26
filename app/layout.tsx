@@ -4,7 +4,7 @@ import { AnalyticsListener } from "@/components/analytics-listener";
 import { MobileOrderBar } from "@/components/mobile-order-bar";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { TopBar } from "@/components/top-bar";
+import { LiquidGlass } from "@/components/liquid-glass";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#050e26",
+  themeColor: "#000fff",
   viewportFit: "cover",
 };
 
@@ -55,7 +55,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           Pular para o conteúdo
         </a>
-        <TopBar />
+        <LiquidGlass />
         <SiteHeader />
         <main id="conteudo">{children}</main>
         <SiteFooter />

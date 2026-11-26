@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ArrowRight, Check, Info } from "lucide-react";
+import { ArcoU } from "@/components/brand-shapes";
 import { SectionTitle } from "@/components/section-title";
 
 /**
@@ -18,17 +19,16 @@ export function GasDoPovo() {
   return (
     <section id="gas-do-povo" aria-labelledby="gdp-titulo" className="py-20 md:py-24 lg:py-28">
       <div className="container-site grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-        {/* Tag 3D oficial do Programa Gás do Povo sem card, solta e com sombra natural */}
+        {/* Tag 3D oficial do Programa Gás do Povo à frente de uma Forma U branca (uso acolhimento) */}
         <div className="revelar relative flex items-center justify-center lg:col-span-6">
           <div className="relative flex h-[420px] w-full max-w-[420px] items-center justify-center sm:h-[520px] sm:max-w-[520px] lg:h-[620px] lg:max-w-[580px] xl:h-[660px] xl:max-w-[620px]">
+            <ArcoU cor="branco" className="absolute inset-x-[14%] bottom-[4%] top-[6%]" />
             <Image
               src="/images/tag-gas-do-povo.png"
               alt="Tag 3D oficial do Programa Gás do Povo"
               fill
-              priority
-              unoptimized
               sizes="(min-width: 1280px) 620px, (min-width: 1024px) 580px, 420px"
-              className="object-contain object-center drop-shadow-[0_35px_70px_rgba(0,0,0,0.75)] transition-transform duration-500 ease-[var(--ease-suave)] hover:scale-105 hover:-rotate-1 select-none"
+              className="object-contain object-center drop-shadow-[0_22px_30px_rgba(0,6,110,0.35)] transition-transform duration-500 ease-[var(--ease-suave)] hover:scale-105 hover:-rotate-1 select-none"
             />
           </div>
         </div>
@@ -47,7 +47,7 @@ export function GasDoPovo() {
           <ul className="revelar mt-8 divide-y divide-white/10 border-y border-linha">
             {pontos.map((p) => (
               <li key={p} className="flex items-center gap-4 py-4 text-[17px] font-medium">
-                <span className="grid size-9 shrink-0 place-items-center rounded-lg border border-linha-forte text-celeste">
+                <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-ciano text-azul">
                   <Check aria-hidden size={18} strokeWidth={2} />
                 </span>
                 {p}

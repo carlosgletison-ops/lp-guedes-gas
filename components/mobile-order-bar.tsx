@@ -29,13 +29,13 @@ export function MobileOrderBar() {
   return (
     <div
       inert={!visivel}
-      className={`fixed inset-x-0 bottom-0 z-40 border-t border-linha bg-noite/95 px-4 pb-[calc(12px+env(safe-area-inset-bottom))] pt-3 transition-transform duration-300 ease-[var(--ease-suave)] md:hidden ${
-        visivel ? "translate-y-0" : "translate-y-full"
+      className={`vidro fixed inset-x-3 bottom-[calc(10px+env(safe-area-inset-bottom))] z-40 p-2 transition-[transform,opacity] duration-300 ease-[var(--ease-suave)] md:hidden ${
+        visivel ? "translate-y-0 opacity-100" : "translate-y-[140%] opacity-0"
       }`}
     >
       <TrackedLink
         href="/atendimento"
-        className="flex h-12 w-full items-center justify-center gap-2.5 rounded-md bg-verde text-base font-semibold text-white active:bg-verde-escuro"
+        className="flex h-12 w-full items-center justify-center gap-2.5 rounded-[14px] bg-verde text-base font-bold text-azul active:bg-verde-escuro"
       >
         <WhatsAppIcon className="size-5" />
         Pedir meu gás pelo WhatsApp
